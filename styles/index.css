@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap');
+@import url('repos.css');
+@font-face {font-family: 'Metana';  src: url(../fonts/NeueMetanaNext-SemiBold.otf); scroll-behavior: smooth;}
+
+*{
+    font-family:'Sora', 'sans-serif';
+    color: var(--Magnolia);
+    margin: 0;    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+:root{
+    --Night: #141414;
+    --Magnolia: #E6E6E6;
+    --Lime: #C0FF00;
+
+    --HTML:Red;
+    --CSS: Blue;
+    --JavaScript: Purple;
+}
+
+body{  
+    background-color: var(--Night);
+}
+main{
+    max-width: 1200px;
+    margin: auto; 
+}
+
+.repos__container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+footer{
+    width: 80%;
+    margin: 2rem auto 0 auto;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    text-align: center;
+    font-size: .8rem;
+    font-weight: 500;
+    color: var(--Magnolia);
+    padding: 1.2rem;
+    border-top: 1px solid var(--Lime);
+}  
+#social-links{
+    color: var(--Magnolia);
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+footer img{
+    align-items: baseline;
+    width: 1.5rem;
+}
