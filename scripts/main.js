@@ -15,10 +15,8 @@ axios.get(url).then(response => {
 			let projDesc 	= repos[i].description;						//Pega Descrição do projeto
 			let repoPage 	= repos[i].homepage;						//Pega a página de Build do projeto	
 			let projURL 	= repos[i].url								//Pega a URL de API do projeto específico
-			
 
 			//EndPoint das linguages do repositorio: https://api.github.com/repos/${user}/"nome-do-projeto"/languages`
-
 
 			let projLangs = axios.get(`${projURL}/languages`).then(response => {
 				const langs = response.data;
@@ -45,8 +43,8 @@ axios.get(url).then(response => {
 			<p class="repo__description">${description}</p>
 			<div class="repo__langs">
 				<span class="repo__tag HTML">HTML</span>
-				<span class="repo__tag HTML">HTML</span>
-				<span class="repo__tag HTML">HTML</span>
+				<span class="repo__tag CSS">CSS</span>
+				<span class="repo__tag JavaScript">JavaScript</span>
 			</div>
 			<div class="repo__links">
 				<a class="repo__github" href="${gitLink}"><img src="img/icons/github.svg"></a>
