@@ -3,7 +3,7 @@ const url = `https://api.github.com/users/${user}/repos`; //Endpoint dos reposit
 
 const reposContainer = document.querySelector("[data-repos]")
 
-axios.get(url).then(response => {
+axios.get(url).then( async response => {
 		const repositories = response.data;
 
 		for (i=0; i < repositories.length; i++){
@@ -16,7 +16,7 @@ axios.get(url).then(response => {
 
 			//EndPoint das linguages do repositorio: https://api.github.com/repos/${user}/"nome-do-projeto"/languages`
 
-			let projectLangs = axios.get(`${projectAPI}/languages`).then(response => {
+			let projectLangs = await axios.get(`${projectAPI}/languages`).then(response => {
 				const langs = response.data;
 				return langs
 			}).catch(error => console.log(error))
