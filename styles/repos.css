@@ -2,9 +2,9 @@
 
 .repo__card{
     aspect-ratio: 3/4;
-    width: 320px;
+    width: 315px;
     padding: 2.2rem;
-    margin: 1.5rem;
+    margin: 1.2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
