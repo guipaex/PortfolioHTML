@@ -11,12 +11,21 @@
 }
 :root{
     --Night: #141414;
+    --Night-90: #1F1F1F;
+    --Night-80: #434343;
+    --Night-60: #727272;
+    --Night-40: #A1A1A1;
+    --Night-20: #D0D0D0;
+
     --Magnolia: #E6E6E6;
     --Lime: #C0FF00;
 
-    --HTML:rgb(235, 130, 10);
-    --CSS: rgb(0, 124, 240);
-    --JavaScript: rgb(233, 212, 22);
+    --HTML:rgb(240, 100, 35);
+    --CSS: rgb(35, 100, 240);
+    --JavaScript: rgb(245, 220, 30);
+    --Typescript: rgb(0, 120, 200);
+    --Java: rgb(235, 45, 45);
+    --React:rgb(0, 215, 255);
 }
 
 body{  
@@ -27,7 +36,6 @@ main{
     max-width: 1200px;
     margin: auto; 
 }
-
 .repos__container{
     display: flex;
     flex-wrap: wrap;
@@ -38,19 +46,20 @@ main{
 footer{
     width: 80%;
     margin: 2rem auto 0 auto;
+    border-top: 1px solid var(--Lime);
     display: flex;
-    justify-content:space-around;
+    justify-content:center;
     align-items: center;
-    text-align: center;
-    font-size: .8rem;
+    font-size: .7rem;
     font-weight: 500;
     color: var(--Magnolia);
-    padding: 1.2rem;
-    border-top: 1px solid var(--Lime);
+    padding: 1rem;
+    
 }  
 #social-links{
     color: var(--Magnolia);
-    width: 250px;
+    width:150px;
+    margin: .5rem .8rem;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -58,5 +67,6 @@ footer{
 
 footer img{
     align-items: baseline;
-    width: 1.5rem;
+    width: 1.5em;
+    margin: auto;
 }

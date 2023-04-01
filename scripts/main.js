@@ -45,22 +45,25 @@ axios.get(url).then( async response => {
 		
 		if (lang3 !== undefined){
 			lang3 = `<span class="repo__tag ${lang3}">${lang3}</span>`
-		} else {
-			lang3 = ""
+		} else {lang3 = ""}
+
+		if (description == null){
+			description = "No description."
 		}
 
 		const card =
 		`<div class="repo__card">
-			<h1 class="repo__title">${title}</h1>
-			<p class="repo__description">${description}</p>
-			<div class="repo__langs" data-lang>
+		<div class="repo__langs" data-lang>
 				<span class="repo__tag ${lang1}">${lang1}</span>
 				<span class="repo__tag ${lang2}">${lang2}</span>
 				${lang3}
 			</div>
+			<h1 class="repo__title">${title}</h1>
+			<p class="repo__description">${description}</p>
+			
 			<div class="repo__links">
 				<a class="repo__github" href="${gitLink}"><img src="img/icons/github.svg"></a>
-				<a class="repo__preview" href="${previewLink}" alt="Live Preview"><img src="img/icons/eye.svg">Live Preview</a>
+				<a class="build__button" href="${previewLink}" alt="Live Preview"><img src="img/icons/eye.svg">Build</a>
 			</div>
 		</div>`
 
