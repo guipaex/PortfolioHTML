@@ -1,35 +1,32 @@
-// GET REPOS from Git
-const user = "guipaex";
-
+const user = "guipaex"; // SET Repositorie owner
 const url = `https://api.github.com/users/${user}/repos`; //Endpoint dos repositorios
 
-const renderResult = document.querySelector("[data-repos]")
+const reposContainer = document.querySelector("[data-repos]")
 
 axios.get(url).then(response => {
-		const repos = response.data;
+		const repositories = response.data;
 
-		for (i=0; i < repos.length; i++){
+		for (i=0; i < repositories.length; i++){
 
-			let repoLink 	=	repos[i].html_url;						//Pega a URL do Repositório no GitHub
-			let projName 	= repos[i].name.replace(/[- ]+/g, " ")		//Pega o nome do Repositório e troca os "-" por espaço
-			let projDesc 	= repos[i].description;						//Pega Descrição do projeto
-			let repoPage 	= repos[i].homepage;						//Pega a página de Build do projeto	
-			let projURL 	= repos[i].url								//Pega a URL de API do projeto específico
+			const repoLink = repositories[i].html_url;							//Pega a URL do Repositório no GitHub
+			const projectName = repositories[i].name.replace(/[- ]+/g, " ")		//Pega o nome do Repositório e troca os "-" por espaço
+			const projectDescription = repositories[i].description;						//Pega Descrição do projeto
+			const projectBuild = repositories[i].homepage;						//Pega a página de Build do projeto	
+			const projectAPI = repositories[i].url								//Pega a URL de API do projeto específico
 
 			//EndPoint das linguages do repositorio: https://api.github.com/repos/${user}/"nome-do-projeto"/languages`
 
-			let projLangs = axios.get(`${projURL}/languages`).then(response => {
+			let projectLangs = axios.get(`${projectAPI}/languages`).then(response => {
 				const langs = response.data;
 				return langs
 			}).catch(error => console.log(error))
 
-			console.log(`${projURL}/languages`)
-
-			console.log(projLangs)
+			console.log(`${projectAPI}/languages`)
+			console.log(projectLangs)
 			
 			//Exclui o repositório do READ.ME e os que não possuem LivePreview
-			if(	projName !== user && repoPage !== null){
-				createCard(projName, projDesc, repoLink, repoPage)
+			if(	projectName !== user && projectBuild !== null){
+				createCard(projectName, projectDescription, repoLink, projectBuild)
 			}
 		}
 	}).catch(error => console.log(error))
@@ -52,7 +49,7 @@ axios.get(url).then(response => {
 			</div>
 		</div>`
 
-		renderResult.innerHTML += card
+		reposContainer.innerHTML += card
 	}
 
 
