@@ -16,10 +16,9 @@
     --Night-60: #727272;
     --Night-40: #A1A1A1;
     --Night-20: #D0D0D0;
-
     --Magnolia: #E6E6E6;
     --Lime: #C0FF00;
-
+    --darkGradient: linear-gradient(to bottom right, var(--Night), var(--Night-90));
     --HTML:rgb(240, 100, 35);
     --CSS: rgb(35, 100, 240);
     --JavaScript: rgb(245, 220, 30);

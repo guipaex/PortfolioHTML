@@ -11,19 +11,19 @@
     justify-content: space-between;
 
     border-radius: 8px;
-    border: 1px solid rgba(200, 255, 00, 0.1);
-    background-color: var(--Night-90);
+    border: 1px solid rgba(200, 255, 00, 0);
+    background: var(--darkGradient);
     box-shadow: 0px 155px 30px -10px rgba(0, 0, 0, 0.7);
     -webkit-box-shadow: 0px 15px 30px -10px rgba(0, 0, 0, 0.7);
 
     transition: 300ms;
 }.repo__card:hover{
-    border: 1px solid rgba(200, 255, 00, 0.3);
+    border: 1px solid rgba(200, 255, 00, .5);
     box-shadow: 0 0 20px 0 rgba(200, 255, 0, 0.05);
     -webkit-box-shadow: 0 0 20px 0 rgba(200, 255, 0, 0.02);
 }
 
-.repo__tag{
+.repo__tag{ 
     font-size: 10px;
     font-weight: 700;  
     padding: .2rem .5rem;
@@ -57,7 +57,7 @@
     transition: 300ms;
 }
 .build__button:hover{
-    border: none;;
+    border: none;
     color: var(--Night);
     background-color: var(--Lime);
     transform: scale(1.05);
@@ -79,7 +79,6 @@
     justify-content: space-between;
     width: 100%;
 }
-
 .HTML{
     color: var(--Magnolia);
     background-color: var(--HTML);
