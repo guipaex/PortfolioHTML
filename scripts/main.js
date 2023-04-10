@@ -49,9 +49,8 @@ function printCard(repo, langs){
 		<div class="repo__langs" data-lang> ${createLangTag(langs)} </div>
 		<h1 class="repo__title">${title}</h1>
 		<p class="repo__description">${description}</p>
-		
 		<div class="repo__links">
-			<a class="repo__github" href="${repoLink}"><img src="img/icons/github.svg"></a>
+			<a class="repo__github" href="${repoLink}">Ver repositório</a>
 			<a class="build__button" href="${build}" alt="Live Preview"><img src="img/icons/eye.svg">Build</a>
 		</div>
 	</div>`
@@ -68,5 +67,5 @@ function createLangTag(langs){
 		langTag.push(`<span class="repo__tag ${language}">${language}</span>`)
 	});
 	
-	return langTag.join(' ')
+	return langTag.join('')
 }
