@@ -3,75 +3,70 @@ const url = `https://api.github.com/users/${user}/repos`;
 
 const reposContainer = document.querySelector("[data-repos]")
 
-axios.get(url).then( async response => {
-		const repositories = response.data;
+document.addEventListener('load', createCards())
 
-		for (i=0; i < repositories.length; i++){
-
-			const repoLink = repositories[i].html_url;							//Pega a URL do Repositório no GitHub
-			const projectName = repositories[i].name.replace(/[- ]+/g, " ")		//Pega o nome do Repositório e troca os "-" por espaço
-			const projectDescription = repositories[i].description;				//Pega Descrição do projeto
-			const projectBuild = repositories[i].homepage;						//Pega a página de Build do projeto	
-			const projectAPI = repositories[i].url								//Pega a URL de API do projeto específico
-
-			//EndPoint das linguages do repositorio: https://api.github.com/repos/${user}/"nome-do-projeto"/languages`
-
-			const projectLangs = await axios.get(`${projectAPI}/languages`)
-			.then(response => {
-				const langs = response.data;
-				return langs
-			}).then( obj => {
-				return Object.keys(obj) //retorna um Array com as keys do objeto 'langs'(No caso, as keys são as linguagens)
-			}).catch(error => console.log(error))
-
-			
-
-			// console.log(`${projectAPI}/languages`)
-			
-			//Exclui o repositório do READ.ME e os que não possuem LivePreview
-			if(	projectName !== user && projectBuild !== null){
-
-				const lang1 = projectLangs[0]
-				const lang2 = projectLangs[1]
-				const lang3 = projectLangs[2]
-
-				createCard(projectName, projectDescription, lang1, lang2, lang3, repoLink, projectBuild)
-			}
-		}
-	}).catch(error => console.log(error))
-
-
-	function createCard(title, description, lang1, lang2, lang3 , gitLink, previewLink){
-		
-		if (lang3 !== undefined){
-			lang3 = `<span class="repo__tag ${lang3}">${lang3}</span>`
-		} else {lang3 = ""}
-
-		if (description == null){
-			description = "No description."
-		}
-
-		const card =
-		`<div class="repo__card">
-		<div class="repo__langs" data-lang>
-				<span class="repo__tag ${lang1}">${lang1}</span>
-				<span class="repo__tag ${lang2}">${lang2}</span>
-				${lang3}
-			</div>
-			<h1 class="repo__title">${title}</h1>
-			<p class="repo__description">${description}</p>
-			
-			<div class="repo__links">
-				<a class="repo__github" href="${gitLink}"><img src="img/icons/github.svg"></a>
-				<a class="build__button" href="${previewLink}" alt="Live Preview"><img src="img/icons/eye.svg">Build</a>
-			</div>
-		</div>`
-
-		reposContainer.innerHTML += card
-
+async function createCards(){
+	const repositories = await getRepositories(url) //obj JSON recebido ASSINCRONAMENTE.
+	
+	for(i = 0; i < repositories.length; i++){
+		const repoLangs = await getLanguages(repositories[i].url)
+		reposContainer.innerHTML+= printCard(repositories[i], repoLangs)
 	}
+}
 
+async function getRepositories(url){
+	try{
+		const githubEndPoint = await fetch(url);
+		const repositories = await githubEndPoint.json();
+		//Pega a response e cria um array de objetos com todos os repositórios;
+		
+		const validRepositories = repositories.filter(repository => repository.homepage !== null)
+		//Os repositorios válidos são os que possuem uma URL de Build.
 
-/* Pro futuro...
-Botão de fazer o Fork https://github.com/${user}/${rep-url}/fork
-*/
+		return validRepositories
+	}
+	catch (erro) { console.log(erro)}
+
+}
+async function getLanguages(repository){
+	try{
+		const langsEndPoint = await fetch(`${repository}/languages`);
+		const langs = await langsEndPoint.json();
+		return langs
+	}
+	catch (erro) { console.log(erro)}
+
+}
+
+function printCard(repo, langs){
+	
+	const title = repo.name.replace(/[-]+/g, " ");
+	const description = repo.description;
+	const repoLink = repo.html_url;
+	const build = repo.homepage;
+
+	const card =`<div class="repo__card">
+		<div class="repo__langs" data-lang> ${createLangTag(langs)} </div>
+		<h1 class="repo__title">${title}</h1>
+		<p class="repo__description">${description}</p>
+		
+		<div class="repo__links">
+			<a class="repo__github" href="${repoLink}"><img src="img/icons/github.svg"></a>
+			<a class="build__button" href="${build}" alt="Live Preview"><img src="img/icons/eye.svg">Build</a>
+		</div>
+	</div>`
+	
+	return card
+}
+
+function createLangTag(langs){
+	const repoLangs = Object.keys(langs)
+
+	const langTag = []
+	
+	repoLangs.forEach(language => {
+		langTag.push(`<span class="repo__tag ${language}">${language}</span>`)
+	});
+	
+	return langTag.join(' ')
+}
