@@ -8,6 +8,7 @@
     margin: 0;    padding: 0;
     scroll-behavior: smooth;
     box-sizing: border-box;
+    cursor: url('../img/cursor.svg') 15 15, none;
 }
 :root{
     --Night: #141414;
@@ -22,14 +23,13 @@
     --HTML:rgb(240, 100, 35);
     --CSS: rgb(35, 100, 240);
     --JavaScript: rgb(245, 220, 30);
-    --Typescript: rgb(0, 120, 200);
+    --TypeScript: rgb(0, 120, 200);
     --Java: rgb(235, 45, 45);
     --React:rgb(0, 215, 255);
 }
 
 body{  
     background-color: var(--Night);
-    cursor: url('../img/logo.svg');
 }
 main{
     max-width: 1200px;
