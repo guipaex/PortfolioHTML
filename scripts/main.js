@@ -50,8 +50,8 @@ function printCard(repo, langs){
 		<h1 class="repo__title">${title}</h1>
 		<p class="repo__description">${description}</p>
 		<div class="repo__links">
-			<a class="repo__github" href="${repoLink}">Ver repositório</a>
-			<a class="build__button" href="${build}" alt="Live Preview"><img src="img/icons/eye.svg">Build</a>
+			<a class="repo__github" href="${repoLink}" target="_blank" >Ver repositório</a>
+			<a class="build__button" href="${build}"target="_blank" alt="Live Preview"><img src="img/icons/eye.svg">Build</a>
 		</div>
 	</div>`
 	
