@@ -1,4 +1,4 @@
-@import url('index.css');
+@import url('animations.css');
 
 .repo__card{
     width: 350px;
@@ -7,8 +7,9 @@
     margin: 1.2rem auto;
     border-radius: .8rem;
     background: linear-gradient(-30deg, rgba(31,31,31,1) 0%, rgba(20,20,20,1) 50%); 
-    border: 1px solid rgba(200, 255, 00, 0);
-    transition: 500ms;
+    border: 1px solid rgba(200, 255, 00, 0); 
+    animation: cardSpawn 1s ease-in-out 100ms forwards;
+    transition: 300ms;
 }.repo__card:hover{
     box-shadow: 0px 15px 30px -10px rgba(0, 0, 0, .3);
     -webkit-box-shadow: 0px 15px 30px -10px rgba(0, 0, 0, .3);
