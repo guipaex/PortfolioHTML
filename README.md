@@ -2,15 +2,11 @@
 <h1>
 <img width="100%" src="./img/readme__cover.jpg" alt="Portfolio - Guilherme Paes">
 </h1>
-
-<center>
  
 ![LICENCA](https://img.shields.io/github/license/guipaex/Portfolio?style=for-the-badge)
- ![LAST COMMIT](https://img.shields.io/github/last-commit/guipaex/Portfolio?style=for-the-badge&color=7200FF)
- ![DEPLOY](https://img.shields.io/github/deployments/guipaex/Portfolio/github-pages?label=Deploy&style=for-the-badge)
+![LAST COMMIT](https://img.shields.io/github/last-commit/guipaex/Portfolio?style=for-the-badge&color=7200FF)
+![DEPLOY](https://img.shields.io/github/deployments/guipaex/Portfolio/github-pages?label=Deploy&style=for-the-badge)
 ![REPO SIZE](https://img.shields.io/github/repo-size/guipaex/Portfolio?style=for-the-badge)
-
-</center>
 <br />
 
 <h3>
