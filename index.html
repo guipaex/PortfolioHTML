@@ -9,38 +9,27 @@
     <title>Guilherme Paes | Front-End</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/repos.css">
-    <link rel="icon" href="./img/icons/favicon.svg" type="image/x-icon">
+    <link rel="icon" href="./assets/img/icons/favicon.svg" type="image/x-icon">
 </head>
 
 <body>
     <header>
-        <a><img class="header__logo" src="./img/icons/favicon.svg" alt="logo Guilherme Paes"></a>
+        <a href="#"><img class="logo__header" src="./assets/img/icons/favicon.svg" alt="logo Guilherme Paes"></a>
+        
         <nav class="nav">
-            <button class="toggle__button">
-                <span>Menu</span>
-                <img class="open__btn" src="./img/icons/btn_menu.svg" data-button="open" width="50px" alt="Abrir Menu">
-                <img class="close__btn" src="./img/icons/btn_close.svg" data-button="close" width=" 50px" alt="Fechar Menu">
+            <button class="mobile__btn">
+                <img class="btn__open active" src="./assets/img/icons/btn_menu.svg" data-button="open" width="50px" alt="Abrir Menu">
+                <img class="btn__close" src="./assets/img/icons/btn_close.svg" data-button="close" width=" 50px" alt="Fechar Menu">
             </button>
 
-            <ul>
+            <ul class="nav__links">
                 <li class="nav__item"><a href="#portfolio">Works</a></li>
                 <li class="nav__item"><a href="#">About</a></li>
                 <li class="nav__item"><a href="#">LAB</a></li>
                 <li class="nav__item"><a href="#">Contact</a></li>
             </ul>
-
-        </nav>      
-        <div class="menu__btn">
-            
-            
-        <ul class="nav active">
-            <li class="nav__item"><a href="#portfolio">Works</a></li>
-            <li class="nav__item"><a href="#">About</a></li>
-            <li class="nav__item"><a href="#">LAB</a></li>
-            <li class="nav__item"><a href="#">Contact</a></li>
-        </ul>
+        </nav>     
     </header>
-
     <main>
         <section id="home">
             <div class="presentation">
@@ -50,7 +39,7 @@
                 <p>Sou do Rio de Janeiro, tenho 26 anos e sou formado em Design. Estou participando do Progrmama Desenvolve do Grupo Boticário na trilha FullStack visando migrar para a área de desenvolvimento.
                 </p>
             </div>
-            <img class="logo__bg" src="img/logo.svg" alt="" srcset="">
+            <img class="logo__bg" src="./assets/img/logo.svg" alt="" srcset="">
             
         </section>
         <div id="portfolio" class="repos__container" data-repos></div>
@@ -59,15 +48,15 @@
     <footer>
         <div id="social-links">
             <p>Follow Me:</p>
-            <a href="https://instagram.com/guipaes.studio" target="_blank"><img src="img/icons/instagram.svg"></a>
-            <a href="https://github.com/guipaex" target="_blank"><img src="img/icons/github.svg"></i></a>
-            <a href="https://behance.net/guilhermepaes" target="_blank"><img src="img/icons/behance.svg"></i></a>
+            <a href="https://instagram.com/guipaes.studio" target="_blank"><img src="./assets/img/icons/instagram.svg"></a>
+            <a href="https://github.com/guipaex" target="_blank"><img src="./assets/img/icons/github.svg"></i></a>
+            <a href="https://behance.net/guilhermepaes" target="_blank"><img src="./assets/img/icons/behance.svg"></i></a>
         </div>
         <p>Developed by <a href="https://github.com/guipaex" target="_blank">Guilherme Paes</a>.</p>
     </footer>
 
-   <!-- <script src="scripts/main.js"></script>-->
-   <script src="scripts/menu.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/menu.js"></script>
 </body>
 
 </html>

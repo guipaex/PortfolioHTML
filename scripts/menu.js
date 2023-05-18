@@ -1,15 +1,18 @@
-const openButton = document.querySelector('[data-button="open"]')
+const menuButton = document.querySelector('.mobile__btn')
+const openMenu = document.querySelector('.btn__open');
+const closeMenu = document.querySelector('.btn__close');
+const menu = document.querySelector('.nav__links')
 
-openButton.addEventListener('click', toggleMenu);
+const menuButtons = [openMenu, closeMenu]
 
-function toggleMenu(e){
-    if(e.type === 'touchstart'){
-        e.preventDefault();
+menuButton.addEventListener('click', toggleMenu);
+
+
+function toggleMenu(event){
+    if(event.type === 'touchstart'){
+        event.preventDefault();
     }
-    //menu.classList.toggle('active');
-
-    console.log('click')
-
+    menu.classList.toggle('active');
+    openMenu.classList.toggle('active');
+    closeMenu.classList.toggle('active');
 }
-
- console.log(openButton)
