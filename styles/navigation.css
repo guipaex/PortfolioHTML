@@ -6,11 +6,11 @@ header{
     align-items: center;
     margin: auto;
 }
-.home__logo{
+.header__logo{
     width: 3.5rem;
 }
 
-.nav__toggle{
+.menu__btn{
     width: 3.5rem;
     height: 3.5rem;
     display: none;
@@ -25,22 +25,28 @@ header{
     gap: 1rem;
     font-size: 1rem;
     font-weight: 600;
+    background-color: blueviolet;
 }
 .nav__item{
     padding: .25rem 1rem;
     text-decoration: none;
     scroll-behavior: smooth;
+    list-style: none;
+    text-align: center;
+
+    background-color: blue;
 }
 
 @media screen and (max-width: 600px) {
-    header{
-        max-width: 100vw;
-        padding: 0 3rem;
+    .nav button {
+        background-color: brown;
+        color: var(--Magnolia);
+        font-size: 1.2rem;
+        font-weight: 500;
+        border: none;
+
+        display: flex;
+        align-items: center;
     }
-    .nav{
-        display: none;
-    }
-    .nav__toggle{
-        display: block;
-    }
-  }
+
+}
