@@ -1,6 +1,6 @@
 
 <h1>
-<img width="100%" src="./img/readme__cover.jpg" alt="Portfolio - Guilherme Paes">
+<img width="100%" src="./assets/img/readme__cover.jpg" alt="Portfolio - Guilherme Paes">
 </h1>
  
 ![LICENCA](https://img.shields.io/github/license/guipaex/Portfolio?style=for-the-badge)
