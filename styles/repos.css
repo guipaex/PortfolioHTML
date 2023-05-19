@@ -10,7 +10,10 @@
     border: 1px solid rgba(200, 255, 00, 0); 
     animation: cardSpawn 1s ease-in-out 100ms forwards;
     transition: 300ms;
-}.repo__card:hover{
+}
+
+.repo__card:hover{
+    transform: scale(1.1, 1.1);
     box-shadow: 0px 15px 30px -10px rgba(0, 0, 0, .3);
     -webkit-box-shadow: 0px 15px 30px -10px rgba(0, 0, 0, .3);
     background: linear-gradient(-30deg, rgba(31,31,31,1) 10%, rgba(20,20,20,1) 50%); 

@@ -23,6 +23,7 @@
         max-width: 100%;
         padding: 1rem;
         font-weight: 700;
+        z-index: 100;
     }
     .mobile__btn{
         z-index: 100;
@@ -39,7 +40,7 @@
         margin: 10px;
         opacity: 0;
         transform: scale(0) rotate(180deg);
-        transition: 400ms;
+        transition: 250ms;
     }
     .btn__close{
         position: relative;
@@ -47,7 +48,7 @@
         width: 80%;
         margin: 10px;
         visibility: hidden;
-        transition: 400ms;
+        transition: 250ms;
     }
     .nav__links{
         position: absolute;
@@ -58,10 +59,12 @@
         visibility: hidden;
         flex-direction: column;
         justify-content: center;
-        background: radial-gradient(circle at 50vw 50vh, rgba(192,255,0,.1) 0%, transparent 100%);
-        backdrop-filter: blur(10px);
+        background: radial-gradient(circle at 0vw 50vh, rgba(192,255,0,.3) 0%, transparent 100%);
+        background-color: #14141450;
+        backdrop-filter: blur(15px);
         clip-path: circle(0px at top right);
-        transition: 400ms;
+        transition: 250ms;
+        z-index: 1;
     }
     .btn__open.active{
         opacity: 100;
@@ -75,6 +78,6 @@
 
     .nav__links.active {
         visibility: visible;
-        clip-path: circle(100% at top right);
+        clip-path: circle(120% at top right);
     }
 }
