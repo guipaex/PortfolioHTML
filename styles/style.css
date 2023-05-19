@@ -12,14 +12,12 @@
     --Night-20: #D0D0D0;
     --Magnolia: #E6E6E6;
     --Lime: #C0FF00;
-
     --HTML:#f06423;
     --CSS: #2364f0;
     --JavaScript: rgb(245, 220, 30);
     --TypeScript: rgb(0, 120, 200);
     --Java: rgb(235, 45, 45);
     --React:rgb(0, 215, 255);
-
     --darkGradient: linear-gradient(to bottom right, var(--Night), var(--Night-90));
 }
 
@@ -30,12 +28,16 @@
     text-decoration: none;
     color: var(--Magnolia);
 }
+html{
+    scroll-behavior: smooth;
+}
 
 body{ 
-    background:radial-gradient(circle at 0 100vh, rgba(192,255,0,.2) 0%, transparent 40%);
-    background-color: var(--Night);
     font-family:'Sora', 'sans-serif';
     color: var(--Magnolia);
+    width: 100%;
+    background:radial-gradient(circle at 0 900px, rgba(192,255,0,.2) 0%, transparent 40%);
+    background-color: var(--Night);
 }
 header{
     max-width: 80%;
@@ -47,41 +49,39 @@ header{
     z-index: 100;
 }
 main{
-    max-width: 100vw;
-    height: 100vh;
-    margin: auto;
+    overflow-x: clip;
 }
-
+#home{
+    height: 90vh;
+    width: 80%;
+    margin: auto; 
+    display: flex;
+    align-items: center;
+}
 .presentation{
-    position: relative;
-    max-width: 600px;
-    margin: auto auto ;
-}
-.presentation p{
-    font-size: 1.15rem;
-    font-weight: 400;
-    width: 520px;
+    margin-left: 5%;
+    height: 100%;
+    width: 100%;
 }
 .name{
     font-size: 4rem;
-    line-height: 1;
-    margin: 1rem 0 0 0;
+    line-height: 110%;
 }
 .title{
     font-family: 'Metana', 'Sora', sans-serif;
     color: var(--Lime);
     font-size: 1.5rem;
-    margin: 0 0 1rem 0;
+    margin-bottom: 8px;
 }
-
-#home img{
-    position: absolute;
-    right: -20vw;
-    top: 100px;
-    width: 900px; min-width: 400px;
-    animation: logoRotation 60s linear infinite both;
+.home__bg{
+    z-index: -1;
+    transform: translateX(45%);
 }
-
+.logo__bg{
+    height: 85vh;
+    transform-origin: center;
+    animation: homeLogo 60s linear infinite both;
+}
 .repos__container{
     max-width: 1200px;
     margin: auto;
@@ -120,38 +120,43 @@ footer img{
 }
 
 
-@media screen and (max-width: 600px) {
-    body{ 
-        background:radial-gradient(circle at 0 960px, rgba(192,255,0,.2) 0%, transparent 100vw);
-        background-color: var(--Night);
+@media screen and (max-width: 700px) {
+
+    #home{
+        height: 90vh;
+        width: 80%;
+        margin: auto; 
+        display: block;
     }
     .presentation{
-        width: 80vw;
-        margin: auto;
-        z-index: 99;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 0;
+    }
+    .presentation__container{
+        height: 70vh;
+        text-align: center;
     }
     .presentation p{
         width: 100%;
-        font-size: 1rem;
-        font-weight: 400;
     }
     .name{
-        font-size: 2.5rem;
-        line-height: 1;
-        margin: .7rem 0 0 0;
+        font-size: 3rem;
+        line-height: 110%;
     }
     .title{
-        font-size: 1.25rem;
-        margin: .5rem 0 .7rem 0;
+        font-family: 'Metana', 'Sora', sans-serif;
+        color: var(--Lime);
+        font-size: 1.3rem;
+        margin-bottom: 8px;
     }
-    
-    #home img{
-        position: fixed;
-        right: -75%;
-        top: 100px;
-        width: 900px; min-width: 400px;
-        animation: logoRotation 60s linear infinite both;
-        opacity: 0.2;
+    .home__bg{
+        transform:
+            translateY(-80%);
+        opacity: .2;
         z-index: -1;
     }
-  }
+    
+}

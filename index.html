@@ -15,36 +15,92 @@
 <body>
     <header>
         <a href="#"><img class="logo__header" src="./assets/img/icons/favicon.svg" alt="logo Guilherme Paes"></a>
-        
+
         <nav class="nav">
             <button class="mobile__btn">
-                <img class="btn__open active" src="./assets/./img/icons/btn_menu.svg" data-button="open" width="50px" alt="Abrir Menu">
-                <img class="btn__close" src="./assets/img/icons/btn_close.svg" data-button="close" width=" 50px" alt="Fechar Menu">
+                <img class="btn__open active" src="./assets/./img/icons/btn_menu.svg" data-button="open" width="50px"
+                    alt="Abrir Menu">
+                <img class="btn__close" src="./assets/img/icons/btn_close.svg" data-button="close" width=" 50px"
+                    alt="Fechar Menu">
             </button>
-
             <ul class="nav__links">
                 <li class="nav__item"><a href="#portfolio">Works</a></li>
                 <li class="nav__item"><a href="#">About</a></li>
                 <li class="nav__item"><a href="#">LAB</a></li>
                 <li class="nav__item"><a href="#">Contact</a></li>
             </ul>
-        </nav>     
+        </nav>
     </header>
     <main>
         <section id="home">
-            <div class="presentation">
-                <p>Olá, eu sou o</p>
-                <h1 class="name">Guilherme Paes</h1>
-                <h3 class="title">Designer & Fullstack Dev</h3>
-                <p>Sou do Rio de Janeiro, tenho 26 anos e sou formado em Design. Estou participando do Progrmama Desenvolve do Grupo Boticário na trilha FullStack visando migrar para a área de desenvolvimento.
-                </p>
+            <div class="presentation__container">
+                <div class="presentation">
+                    <p>Olá, meu nome é</p>
+                    <h1 class="name">Guilherme Paes</h1>
+                    <h3 class="title">Desenvolvedor Full Stack</h3>
+                    <p> Sou nascido e criado no Rio de Janeiro, sou designer 
+                        há 9 anos e atualmente estou em processo de migração para a
+                        área de tecnologia. Aqui vocÊ vai encontrar meus princiapais projetos
+                        desenvolvidos durante minha jornada de aprendizagem.
+                    </p>
+                </div>
             </div>
-            <img class="logo__bg" src="./assets/img/logo.svg" alt="" srcset="">
-            
+            <div class="home__bg">
+                <img class="logo__bg" src="./assets/img/logo.svg" alt="" srcset="">
+            </div>
         </section>
-        <div id="portfolio" class="repos__container" data-repos></div>
-    </main>
+        <div id="portfolio" class="repos__container" data-repos>
+            <div class="repo__card">
+                <div class="repo__langs" data-lang>
+                    <span class="repo__tag HTML">HTML</span>
+                    <span class="repo__tag CSS">CSS</span>
+                    <span class="repo__tag JavaScript">JavaScript</span>
+                </div>
+                <h1 class="repo__title">Optimus Tech</h1>
+                <p class="repo__description">Página Web de vagas da empresa Optimus Tech, desenvolvida a partir de um
+                    layout do Figma, para o desafio do 7 Days Of Code</p>
+                <div class="repo__links">
+                    <a class="repo__github" href="${repoLink}" target="_blank">Repositório</a>
+                    <a class="build__button" href="${build}" target="_blank" alt="ver o deploy"><img
+                            src="./assets/img/icons/eye.svg">Deploy</a>
+                </div>
+            </div>
 
+            <div class="repo__card">
+                <div class="repo__langs" data-lang>
+                    <span class="repo__tag HTML">HTML</span>
+                    <span class="repo__tag CSS">CSS</span>
+                    <span class="repo__tag JavaScript">JavaScript</span>
+                </div>
+                <h1 class="repo__title">Optimus Tech</h1>
+                <p class="repo__description">Página Web de vagas da empresa Optimus Tech, desenvolvida a partir de um
+                    layout do Figma, para o desafio do 7 Days Of Code</p>
+                <div class="repo__links">
+                    <a class="repo__github" href="${repoLink}" target="_blank">Repositório</a>
+                    <a class="build__button" href="${build}" target="_blank" alt="ver o deploy"><img
+                            src="./assets/img/icons/eye.svg">Deploy</a>
+                </div>
+            </div>
+
+            <div class="repo__card">
+                <div class="repo__langs" data-lang>
+                    <span class="repo__tag HTML">HTML</span>
+                    <span class="repo__tag CSS">CSS</span>
+                    <span class="repo__tag JavaScript">JavaScript</span>
+                </div>
+                <h1 class="repo__title">Optimus Tech</h1>
+                <p class="repo__description">Página Web de vagas da empresa Optimus Tech, desenvolvida a partir de um
+                    layout do Figma, para o desafio do 7 Days Of Code</p>
+                <div class="repo__links">
+                    <a class="repo__github" href="${repoLink}" target="_blank">Repositório</a>
+                    <a class="build__button" href="${build}" target="_blank" alt="ver o deploy"><img
+                            src="./assets/img/icons/eye.svg">Visualizar</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <!--
     <footer>
         <div id="social-links">
             <p>Follow Me:</p>
@@ -54,8 +110,8 @@
         </div>
         <p>Developed by <a href="https://github.com/guipaex" target="_blank">Guilherme Paes</a>.</p>
     </footer>
-
-    <script src="scripts/main.js"></script>
+-->
+    <!--<script src="scripts/main.js"></script> -->
     <script src="scripts/menu.js"></script>
 </body>
 
