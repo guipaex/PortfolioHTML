@@ -121,7 +121,10 @@ footer img{
 
 
 @media screen and (max-width: 700px) {
-
+    body{
+        background:radial-gradient(circle at 0 900px, rgba(192,255,0,.2) 0%, transparent 100vw);
+        background-color: var(--Night);
+    }
     #home{
         height: 90vh;
         width: 80%;

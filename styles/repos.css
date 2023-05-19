@@ -12,15 +12,11 @@
     transition: 300ms;
 }
 
-.repos__container .repo__card:hover{
+.repo__card:hover{
     transform: scale(1.1, 1.1);
     box-shadow: 0px 15px 30px -10px rgba(0, 0, 0, .3);
     -webkit-box-shadow: 0px 15px 30px -10px rgba(0, 0, 0, .3);
     background: linear-gradient(-30deg, rgba(31,31,31,1) 10%, rgba(20,20,20,1) 50%); 
-}
-.repos__container:hover > .repo__card:not(:hover){
-    filter: blur(10px);
-    transform: scale(0.9, 0.9);
 }
 .repo__tag{ 
     font-size: 10px;
