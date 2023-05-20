@@ -43,5 +43,3 @@ async function getLanguages(url){
 
 getRepositories()
 
-console.log(projects)
-export default projects
