@@ -10,13 +10,17 @@
 .mobile__btn{
     display: none;
 }
-
 .nav__item{
-    width: 100px;
+    width: fit-content;
     text-align: center;
-    padding: .25rem 1rem;
+    padding: .3rem 1rem;
     margin: 1rem .37rem;
 }
+.nav__item:hover a{
+    transition: 200ms;
+    color: var(--Lime);
+}
+
 
 @media screen and (max-width: 700px) {
     header{
