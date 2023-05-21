@@ -1,6 +1,6 @@
 const user = "guipaex";
 const url = `https://api.github.com/users/${user}/repos`;
-
+const tagFiltro = 'portfolio';
 const reposContainer = document.querySelector("[data-repos]")
 
 document.addEventListener('load', createCards())
@@ -18,10 +18,20 @@ async function getRepositories(url){
 	try{
 		const githubEndPoint = await fetch(url);
 		const repositories = await githubEndPoint.json();
-		//Pega a response e cria um array de objetos com todos os repositórios;
-		
-		const validRepositories = repositories.filter(repository => repository.homepage !== null)
-		//Os repositorios válidos são os que possuem uma URL de Build.
+
+		let validRepositories = []
+
+		repositories.forEach(async repository => { 
+            let tagged = false;
+            repository.topics.forEach(async topic => {
+                if (topic == tagFiltro) {
+                    tagged = true;
+                }
+            })
+            if (tagged) {
+                validRepositories.push(repository)
+            }
+        })
 
 		return validRepositories
 	}
