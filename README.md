@@ -30,4 +30,4 @@
 
 <br />
 
-<h3 width="100%" style="display:flex; justify-content:center">Feito com<img width="25px" style="margin: 0 5px" src ="https://em-content.zobj.net/source/microsoft-teams/363/fire_1f525.png"> por Guilherme Paes.</h3>
+<h3 width="100%" style="display:flex; justify-content:center">Feito com<img width="25px" style="margin: 0 5px; transform: translateY(5px)" src ="https://em-content.zobj.net/source/microsoft-teams/363/heart-on-fire_2764-fe0f-200d-1f525.png">por Guilherme Paes.</h3>
