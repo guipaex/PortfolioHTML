@@ -7,8 +7,7 @@
     margin: 1.2rem auto;
     border-radius: .8rem;
     background: linear-gradient(-30deg, rgba(31,31,31,1) 0%, rgba(20,20,20,1) 50%); 
-    border: 1px solid rgba(200, 255, 00, 0); 
-    animation: cardSpawn 1s ease-in-out 100ms forwards;
+    border: 1px solid rgba(200, 255, 00, 0);
     transition: 300ms;
 }
 
