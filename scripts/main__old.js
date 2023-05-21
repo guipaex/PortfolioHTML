@@ -32,7 +32,6 @@ async function getRepositories(url){
                 validRepositories.push(repository)
             }
         })
-		console.log(validRepositories)
 
 		return validRepositories
 	}
