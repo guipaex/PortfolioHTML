@@ -83,6 +83,7 @@ section{
     margin: auto;
     padding: 5rem 0;
     height: fit-content;
+    animation: cardSpawn 1s ease-in-out 100ms forwards;
 }
 .section__title{
     font-family: 'Metana';
