@@ -1,60 +1,81 @@
-
-const reposContainer = document.querySelector("[data-repos]")
-const tagFiltro = 'portfolio'
 const user = "guipaex";
-const endpoint = `https://api.github.com/users/${user}/repos`;
+const url = `https://api.github.com/users/${user}/repos`;
+const tagFiltro = 'portfolio';
+const reposContainer = document.querySelector("[data-repos]")
 
-let projects = []
+document.addEventListener('load', createCards())
 
-async function getRepositories() {
-    try {
-        const result = await fetch(endpoint);
-        const repos = await result.json();
+async function createCards(){
+	const repositories = await getRepositories(url) //obj JSON recebido ASSINCRONAMENTE.
+	
+	for(i = 0; i < repositories.length; i++){
+		const repoLangs = await getLanguages(repositories[i].url)
+		reposContainer.innerHTML+= printCard(repositories[i], repoLangs)
+	}
+}
 
-        repos.forEach(async repository => {
+async function getRepositories(url){
+	try{
+		const githubEndPoint = await fetch(url);
+		const repositories = await githubEndPoint.json();
+
+		let validRepositories = []
+
+		repositories.forEach(async repository => { 
             let tagged = false;
             repository.topics.forEach(async topic => {
-                if (topic = tagFiltro) {
+                if (topic == tagFiltro) {
                     tagged = true;
                 }
             })
             if (tagged) {
-                const project = new Object();
-                project.name = repository.name;
-                project.description = repository.description;
-                project.repo = repository.html_url;
-                project.page = repository.homepage;
-                project.languages = getLanguages(repository.url);
-                projects.push(project)
+                validRepositories.push(repository)
             }
         })
-    } catch (erro) {
-        console.log(erro)
-    }
+
+		return validRepositories
+	}
+	catch (erro) { console.log(erro)}
+
+}
+async function getLanguages(repository){
+	try{
+		const langsEndPoint = await fetch(`${repository}/languages`);
+		const langs = await langsEndPoint.json();
+		return langs
+	}
+	catch (erro) { console.log(erro)}
+
 }
 
-async function getLanguages(url) {
-    try {
-        const langsURL = await fetch(`${url}/languages`);
-        const langs = await langsURL.json();
-        return langs;
-    }
-    catch (erro) {
-        console.log(erro)
-    }
+function printCard(repo, langs){
+	
+	const title = repo.name.replace(/[-]+/g, " ");
+	const description = repo.description;
+	const repoLink = repo.html_url;
+	const build = repo.homepage;
+
+	const card =`<div class="repo__card">
+		<div class="repo__langs" data-lang> ${createLangTag(langs)} </div>
+		<h1 class="repo__title">${title}</h1>
+		<p class="repo__description">${description}</p>
+		<div class="repo__links">
+			<a class="repo__github" href="${repoLink}" target="_blank" >Ver repositório</a>
+			<a class="build__button" href="${build}"target="_blank" alt="Live Preview"><img src="./assets/img/icons/eye.svg">Build</a>
+		</div>
+	</div>`
+	
+	return card
 }
 
-async function getProjects() {
-    await getRepositories()
-    return projects
+function createLangTag(langs){
+	const repoLangs = Object.keys(langs)
+
+	const langTag = []
+	
+	repoLangs.forEach(language => {
+		langTag.push(`<span class="repo__tag ${language}">${language}</span>`)
+	});
+	
+	return langTag.join('')
 }
-getProjects()
-    .then((projects) => {
-        projects.forEach(project => {
-            console.log(project)
-        })
-    })
-/*
-
-
-*/

@@ -7,7 +7,7 @@
     margin: 1.2rem auto;
     border-radius: .8rem;
     background: linear-gradient(-30deg, rgba(31,31,31,1) 0%, rgba(20,20,20,1) 50%); 
-    border: 1px solid rgba(200, 255, 00, 0);
+    border: 1px solid #E6E6E650;
     transition: 300ms;
 }
 
@@ -15,7 +15,8 @@
     transform: scale(1.1, 1.1);
     box-shadow: 0px 15px 30px -10px rgba(0, 0, 0, .3);
     -webkit-box-shadow: 0px 15px 30px -10px rgba(0, 0, 0, .3);
-    background: linear-gradient(-30deg, rgba(31,31,31,1) 10%, rgba(20,20,20,1) 50%); 
+    background: linear-gradient(-30deg, rgba(31,31,31,1) 10%, rgba(20,20,20,1) 50%);
+    border: 1px solid var(--Magnolia);
 }
 .repo__tag{ 
     font-size: 10px;
@@ -49,9 +50,11 @@
     line-height: 2rem;
     transition: 300ms;
     text-decoration: none;
+    transition: 350ms;
 }.repo__github:hover {
     font-weight: 600;
     color: var(--Lime);
+    border-bottom: 1px solid var(--Lime);
 }
 .build__button{
     display: flex;

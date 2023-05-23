@@ -38,10 +38,7 @@
                     <p>Olá, meu nome é</p>
                     <h1 class="name">Guilherme Paes</h1>
                     <h3 class="title">Desenvolvedor FullStack</h3>
-                    <p> Nascido e criado no Rio de Janeiro, sou designer 
-                        há 9 anos e atualmente estou em processo de migração para a
-                        área de tecnologia. Aqui você irá encontrar meus principais projetos
-                        desenvolvidos durante minha jornada de aprendizagem.
+                    <p> Nascido e criado no Rio de Janeiro, sou designer há 9 anos e estou migrando para a área de Desenvolvimento Web. Aqui você irá encontrar os principais projetos desenvolvidos durante minha jornada de aprendizagem.
                     </p>
                 </div>
             </div>
@@ -52,6 +49,19 @@
         <section id="works">
             <h1 class="section__title">Projetos Selecionados</h1>
             <div id="portfolio" class="repos__container" data-repos>
+                <div class="repo__card">
+                    <div class="repo__langs" data-lang>
+                        <span class="repo__tag JavaScript">JavaScript</span>
+                        <span class="repo__tag CSS">CSS</span> 
+                        <span class="repo__tag HTML">HTML</span> 
+                    </div>
+                    <h1 class="repo__title">${title}</h1>
+                    <p class="repo__description">${description}</p>
+                    <div class="repo__links">
+                        <a class="repo__github" href="${repoLink}" target="_blank">Ver repositório</a>
+                        <a class="build__button" href="${build}"target="_blank" alt="Live Preview"><img src="./assets/img/icons/eye.svg">Visualizar</a>
+                    </div>
+                </div>
             </div>
         </section>
         <!--<section id="About" style=" background-color: purple">About</section>-->
@@ -72,9 +82,8 @@
         <p>Developed by <a href="https://github.com/guipaex" target="_blank">Guilherme Paes</a>.</p>
     </footer>
 
-    <!-- <script src="scripts/repositories.js"></script>-->
     <script src="scripts/menu.js"></script>
-    <script src="scripts/main__old.js"></script>
+    <script src="scripts/repositories.js"></script>
     
 </body>
 
