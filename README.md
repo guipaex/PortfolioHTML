@@ -13,7 +13,7 @@
     Portfolio desenvolvido com HTML, CSS e JavaScript, o site utiliza a API do GitHub para mostrar os principais projetos desenvolvidos durante minha jornada de estudos e aprendizado como desenvolvedor Full Stack.
 </h3>
 <br />
-<a href="https://github.com/guipaex/Portfolio" alt="Ver site">Ver Demo</a>
+<a href="https://guipaex.github.io/Portfolio/" alt="Ver site">Ver Demo</a>
 ·
 <a href="https://github.com/guipaex/Portfolio/issues" alt="Reportar Bug">Reportar Bug</a>
 ·
