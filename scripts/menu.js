@@ -1,26 +1,17 @@
-const menuButton = document.querySelector('.mobile__btn')
-const openMenu = document.querySelector('.btn__open');
-const closeMenu = document.querySelector('.btn__close');
+const openBtn = document.querySelector('.btn__open');
+const closeBtn = document.querySelector('.btn__close');
 const menu = document.querySelector('.nav__links')
-const links = document.querySelectorAll('.nav__item')
+const links = document.querySelectorAll('[data-navTrigger]')
 
-const menuButtons = [openMenu, closeMenu]
+links.forEach(button => {
+    button.addEventListener('click', toggleMenu);
+});
 
-menuButton.addEventListener('click', toggleMenu);
-links.forEach(link => {
-link.addEventListener('click', toggleMenu);
-})
-
-
-function teste(event){
-    console.log('clique no link')
-}
-
-function toggleMenu(event){
+export function toggleMenu(event){
     if(event.type === 'touchstart'){
         event.preventDefault();
     }
+    closeBtn.classList.toggle('active');
+    openBtn.classList.toggle('active');
     menu.classList.toggle('active');
-    openMenu.classList.toggle('active');
-    closeMenu.classList.toggle('active');
 }

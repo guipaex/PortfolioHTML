@@ -15,19 +15,18 @@
 <body>
     <header>
         <a href="#home"><img class="logo__header" src="./assets/img/icons/favicon.svg" alt="logo Guilherme Paes"></a>
-
         <nav class="nav">
             <button class="mobile__btn">
-                <img class="btn__open active" src="./assets/./img/icons/btn_menu.svg" data-button="open" width="50px"
+                <img class="btn__open active" src="./assets/./img/icons/btn_menu.svg" data-navTrigger width="50px"
                     alt="Abrir Menu">
-                <img class="btn__close" src="./assets/img/icons/btn_close.svg" data-button="close" width=" 50px"
+                <img class="btn__close" src="./assets/img/icons/btn_close.svg" data-navTrigger width=" 50px"
                     alt="Fechar Menu">
             </button>
             <ul class="nav__links">
-                <li class="nav__item"><a href="#works">Portfolio</a></li>
-                <li class="nav__item"><a href="#About">Sobre Mim</a></li>
-                <!--<li class="nav__item"><a href="#LAB">LAB</a></li>-->
-                <li class="nav__item"><a href="#Contact">Contato</a></li>
+                <li class="nav__item"><a href="#works" data-navTrigger>Portfolio</a></li>
+                <li class="nav__item"><a href="#About" data-navTrigger>Sobre Mim</a></li>
+                <!--<li class="nav__item"><a href="#LAB" data-navTrigger>LAB</a></li>-->
+                <li class="nav__item"><a href="#Contact" data-navTrigger>Contato</a></li>
             </ul>
         </nav>
     </header>
@@ -68,8 +67,8 @@
         <p>Developed by <a href="https://github.com/guipaex" target="_blank">Guilherme Paes</a>.</p>
     </footer>
 
-    <script src="scripts/menu.js"></script>
     <script src="scripts/repositories.js"></script>
+    <script src="scripts/main.js" type="module"></script>
     
 </body>
 
