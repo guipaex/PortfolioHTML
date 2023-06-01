@@ -1,4 +1,4 @@
-const user = "guipaex";
+//const user = "guipaex";
 const url = `https://api.github.com/users/${user}/repos`;
 const tagFiltro = 'portfolio';
 const reposContainer = document.querySelector("[data-repos]")
@@ -18,9 +18,7 @@ async function getRepositories(url){
 	try{
 		const githubEndPoint = await fetch(url);
 		const repositories = await githubEndPoint.json();
-
 		let validRepositories = []
-
 		repositories.forEach(async repository => { 
             let tagged = false;
             repository.topics.forEach(async topic => {
@@ -46,36 +44,4 @@ async function getLanguages(repository){
 	}
 	catch (erro) { console.log(erro)}
 
-}
-
-function printCard(repo, langs){
-	
-	const title = repo.name.replace(/[-]+/g, " ");
-	const description = repo.description;
-	const repoLink = repo.html_url;
-	const build = repo.homepage;
-
-	const card =`<div class="repo__card">
-		<div class="repo__langs" data-lang> ${createLangTag(langs)} </div>
-		<h1 class="repo__title">${title}</h1>
-		<p class="repo__description">${description}</p>
-		<div class="repo__links">
-			<a class="repo__github" href="${repoLink}" target="_blank"> Detalhes </a>
-			<a class="build__button" href="${build}"target="_blank" alt="Visualizar Projeto"><img src="./assets/img/icons/eye.svg"> Visualizar </a>
-		</div>
-	</div>`
-	
-	return card
-}
-
-function createLangTag(langs){
-	const repoLangs = Object.keys(langs)
-
-	const langTag = []
-	
-	repoLangs.forEach(language => {
-		langTag.push(`<span class="repo__tag ${language}">${language}</span>`)
-	});
-	
-	return langTag.join('')
 }
