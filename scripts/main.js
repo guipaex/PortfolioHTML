@@ -1,6 +1,6 @@
 import { toggleMenu } from './menu.js'
 import { printCard } from './prints.js'
-import { generateProjects } from './repositories2.js'
+import { generateProjects } from './repositories.js'
 
 const reposContainer = document.querySelector("[data-repos]")
 
