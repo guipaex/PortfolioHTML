@@ -33,9 +33,10 @@ html{
 body{ 
     font-family:'Sora', 'sans-serif';
     color: var(--Magnolia);
-    width: 100%;
+    width: 100vw;
     background:radial-gradient(circle at 0 900px, rgba(192,255,0,.2) 0%, transparent 40%);
     background-color: var(--Night);
+    overflow-x: hidden;
 }
 header{
     max-width: 75%;
@@ -128,6 +129,16 @@ footer img{
     margin: auto;
 }
 
+.cursor{
+    position: absolute;
+    display: block;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    background:radial-gradient(circle, rgba(192,255,0,.1) 0%, transparent 70%);
+    transition: all .1s ease;
+    z-index: -1;
+}
 
 @media screen and (max-width: 700px) {
     body{
