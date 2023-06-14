@@ -5,9 +5,7 @@ function formatTitle(title) {
 
 function langTags (projectLangs){
     let langTags = []
-    let tagLimit = projectLangs.length <= 3? 2 : 3;
-    console.log(projectLangs.length)
-    console.log(tagLimit)
+    let tagLimit = projectLangs.length < 3? 2 : 3;
     for (let i = 0; i < tagLimit; i ++){
         langTags.push(`<span class="repo__tag ${projectLangs[i]}">${projectLangs[i]}</span>`)
     }

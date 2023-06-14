@@ -28,7 +28,7 @@ async function getProjects(url) {
             };
             projects.push(project)
         });
-        return projects
+        return projects.sort()
     } catch (error) {
         console.log(error)
     }
