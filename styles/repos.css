@@ -3,12 +3,12 @@
 .repo__card{
     width: 350px;
     height: fit-content;
-    padding: 2.5rem;
+    padding: 2rem;
     margin: 1.2rem auto;
     border-radius: .8rem;
     background: linear-gradient(-30deg, rgba(31,31,31,1) 0%, rgba(20,20,20,1) 50%); 
     border: 1px solid #E6E6E650;
-    transition: 300ms;
+    transition: 200ms;
 }
 
 .repo__card:hover{
@@ -19,12 +19,11 @@
     border: 1px solid var(--Magnolia);
 }
 .repo__tag{ 
-    font-size: 10px;
+    font-size: .7rem;
     font-weight: 700;  
-    padding: .2rem .5rem;
-    border-radius: 4px;
-    margin: 0 .2rem 1rem 0;
-    transition: 300ms;
+    padding: .15rem .5rem;
+    border-radius: 5px;
+    margin: .2rem;
 }
 .repo__title{
     font-size: 1.5rem;
@@ -32,10 +31,10 @@
     margin: 1rem auto;
 }
 .repo__description{
-    margin: 1rem 0;
     font-size: .8rem;
     word-break: break-word;
-    height: 70px;
+    height: 75px;
+    overflow: hidden;
 }
 .repo__links{
     width: 100%;
@@ -43,6 +42,7 @@
     display: flex;
     justify-content: space-between;
     align-content: center;
+    margin-top: 1rem;
 }
 .repo__github{
     font-size: .8rem;
@@ -83,7 +83,6 @@
     margin: 5px 10px 5px 0;
 }
 
-
 .HTML{
     color: var(--Magnolia);
     background-color: var(--HTML);
@@ -92,11 +91,18 @@
     color: var(--Magnolia);
     background-color: var(--CSS);
 }
+.SCSS{
+    color: var(--Magnolia);
+    background-color: var(--SCSS);
+}
 .JavaScript{
-    color: rgb(46, 46, 46);
+    color: var(--Night);
     background-color: var(--JavaScript);
  }
-
+.TypeScript{
+    color: var(--Magnolia);
+    background-color: var(--TypeScript);
+}
 @media screen and (max-width: 500px) {
     .repo__card{
         width: 85vw;

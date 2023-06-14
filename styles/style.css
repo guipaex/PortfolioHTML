@@ -12,12 +12,13 @@
     --Night-20: #D0D0D0;
     --Magnolia: #E6E6E6;
     --Lime: #C0FF00;
+
     --HTML:#f06423;
-    --CSS: #2364f0;
-    --JavaScript: rgb(245, 220, 30);
-    --TypeScript: rgb(0, 120, 200);
-    --Java: rgb(235, 45, 45);
-    --React:rgb(0, 215, 255);
+    --CSS: #4d00c0;
+    --SCSS: #ff0080;
+    --JavaScript:  #ffc813;
+    --TypeScript: #007bff;
+
     --darkGradient: linear-gradient(to bottom right, var(--Night), var(--Night-90));
 }
 *{
@@ -141,6 +142,9 @@ footer img{
 }
 
 @media screen and (max-width: 700px) {
+    .cursor{
+        display: none;
+    }
     body{
         background:radial-gradient(circle at 0 900px, rgba(192,255,0,.2) 0%, transparent 100vw);
         background-color: var(--Night);

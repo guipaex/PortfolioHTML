@@ -5,10 +5,14 @@ function formatTitle(title) {
 
 function langTags (projectLangs){
     let langTags = []
-    projectLangs.forEach( async language => {
-        langTags.push(`<span class="repo__tag ${language}">${language}</span>`)
-    })
-    return langTags.sort().join('')
+    let tagLimit = projectLangs.length <= 3? 2 : 3;
+    console.log(projectLangs.length)
+    console.log(tagLimit)
+    for (let i = 0; i < tagLimit; i ++){
+        langTags.push(`<span class="repo__tag ${projectLangs[i]}">${projectLangs[i]}</span>`)
+    }
+
+    return langTags.join('')
 }
 
 export function printCard(project, language) {
